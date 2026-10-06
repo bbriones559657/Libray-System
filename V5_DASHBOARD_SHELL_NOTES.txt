@@ -1,0 +1,20 @@
+V5 Dashboard / Main Shell Update
+================================
+
+Dashboard content was intentionally kept simple:
+- Total Books
+- Total Members
+- Borrowed Books
+- Overdue Books
+- Transaction History with the existing date/status filters
+
+Main-window behavior:
+- Dashboard opens maximized after login.
+- Permanent left sidebar remains visible.
+- Books, Members, Active Loans, Reports, and Admin Settings load inside the main window.
+- Borrow Book and Return Book remain dialogs because they are short transaction actions.
+- Transactions sidebar item shows the same transaction-history area without the stat cards.
+- Staff users do not see Admin Settings.
+- Current user/role and Logout remain visible in the top bar.
+
+Existing child-form designs were kept; only their hosting/navigation behavior was changed.

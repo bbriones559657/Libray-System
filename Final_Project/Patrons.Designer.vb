@@ -1,9 +1,8 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Patrons
     Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -14,13 +13,9 @@ Partial Class Patrons
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Label1 = New Label()
         Label2 = New Label()
@@ -30,171 +25,221 @@ Partial Class Patrons
         Label6 = New Label()
         Label7 = New Label()
         Label8 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox5 = New TextBox()
-        TextBox6 = New TextBox()
-        TextBox7 = New TextBox()
-        Button1 = New Button()
-        Button2 = New Button()
+        txtFirstName = New TextBox()
+        txtMiddleName = New TextBox()
+        txtLastName = New TextBox()
+        txtEmail = New TextBox()
+        txtPhone = New TextBox()
+        txtValidID = New TextBox()
+        txtValidIDName = New TextBox()
+        chkIsActive = New CheckBox()
+        btnAdd = New Button()
+        btnClear = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Myanmar Text", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(23, 25)
+        Label1.Font = New Font("Segoe UI", 16.0F, FontStyle.Bold)
+        Label1.ForeColor = Color.SteelBlue
+        Label1.Location = New Point(25, 20)
         Label1.Name = "Label1"
-        Label1.Size = New Size(156, 29)
+        Label1.Size = New Size(224, 30)
         Label1.TabIndex = 0
         Label1.Text = "ADD MEMBERSHIP"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(23, 84)
+        Label2.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkSlateGray
+        Label2.Location = New Point(25, 75)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 15)
+        Label2.Size = New Size(74, 17)
         Label2.TabIndex = 1
         Label2.Text = "First Name"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(23, 143)
+        Label3.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkSlateGray
+        Label3.Location = New Point(25, 135)
         Label3.Name = "Label3"
-        Label3.Size = New Size(79, 15)
+        Label3.Size = New Size(89, 17)
         Label3.TabIndex = 2
         Label3.Text = "Middle Name"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(23, 200)
+        Label4.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label4.ForeColor = Color.DarkSlateGray
+        Label4.Location = New Point(25, 195)
         Label4.Name = "Label4"
-        Label4.Size = New Size(63, 15)
+        Label4.Size = New Size(72, 17)
         Label4.TabIndex = 3
         Label4.Text = "Last Name"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(23, 256)
+        Label5.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label5.ForeColor = Color.DarkSlateGray
+        Label5.Location = New Point(25, 255)
         Label5.Name = "Label5"
-        Label5.Size = New Size(36, 15)
+        Label5.Size = New Size(40, 17)
         Label5.TabIndex = 4
         Label5.Text = "Email"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(23, 313)
+        Label6.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label6.ForeColor = Color.DarkSlateGray
+        Label6.Location = New Point(25, 315)
         Label6.Name = "Label6"
-        Label6.Size = New Size(96, 15)
+        Label6.Size = New Size(110, 17)
         Label6.TabIndex = 5
         Label6.Text = "Contact Number"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(283, 84)
+        Label7.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label7.ForeColor = Color.DarkSlateGray
+        Label7.Location = New Point(285, 75)
         Label7.Name = "Label7"
-        Label7.Size = New Size(171, 15)
+        Label7.Size = New Size(201, 17)
         Label7.TabIndex = 6
-        Label7.Text = "Valid ID Number (If appilicable)"
+        Label7.Text = "Valid ID Number (If applicable)"
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(283, 143)
+        Label8.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        Label8.ForeColor = Color.DarkSlateGray
+        Label8.Location = New Point(285, 135)
         Label8.Name = "Label8"
-        Label8.Size = New Size(159, 15)
+        Label8.Size = New Size(191, 17)
         Label8.TabIndex = 7
-        Label8.Text = "Valid ID Name (If appilicable)"
+        Label8.Text = "Valid ID Name (If applicable)"
         ' 
-        ' TextBox1
+        ' txtFirstName
         ' 
-        TextBox1.Location = New Point(23, 102)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(195, 23)
-        TextBox1.TabIndex = 0
+        txtFirstName.Font = New Font("Segoe UI", 10.5F)
+        txtFirstName.Location = New Point(25, 95)
+        txtFirstName.Name = "txtFirstName"
+        txtFirstName.Size = New Size(220, 26)
+        txtFirstName.TabIndex = 0
         ' 
-        ' TextBox2
+        ' txtMiddleName
         ' 
-        TextBox2.Location = New Point(23, 161)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(195, 23)
-        TextBox2.TabIndex = 1
+        txtMiddleName.Font = New Font("Segoe UI", 10.5F)
+        txtMiddleName.Location = New Point(25, 155)
+        txtMiddleName.Name = "txtMiddleName"
+        txtMiddleName.Size = New Size(220, 26)
+        txtMiddleName.TabIndex = 1
         ' 
-        ' TextBox3
+        ' txtLastName
         ' 
-        TextBox3.Location = New Point(23, 218)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(195, 23)
-        TextBox3.TabIndex = 2
+        txtLastName.Font = New Font("Segoe UI", 10.5F)
+        txtLastName.Location = New Point(25, 215)
+        txtLastName.Name = "txtLastName"
+        txtLastName.Size = New Size(220, 26)
+        txtLastName.TabIndex = 2
         ' 
-        ' TextBox4
+        ' txtEmail
         ' 
-        TextBox4.Location = New Point(23, 331)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(195, 23)
-        TextBox4.TabIndex = 4
+        txtEmail.Font = New Font("Segoe UI", 10.5F)
+        txtEmail.Location = New Point(25, 275)
+        txtEmail.Name = "txtEmail"
+        txtEmail.Size = New Size(220, 26)
+        txtEmail.TabIndex = 3
         ' 
-        ' TextBox5
+        ' txtPhone
         ' 
-        TextBox5.Location = New Point(23, 274)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(195, 23)
-        TextBox5.TabIndex = 3
+        txtPhone.Font = New Font("Segoe UI", 10.5F)
+        txtPhone.Location = New Point(25, 335)
+        txtPhone.Name = "txtPhone"
+        txtPhone.Size = New Size(220, 26)
+        txtPhone.TabIndex = 4
         ' 
-        ' TextBox6
+        ' txtValidID
         ' 
-        TextBox6.Location = New Point(283, 161)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(195, 23)
-        TextBox6.TabIndex = 6
+        txtValidID.Font = New Font("Segoe UI", 10.5F)
+        txtValidID.Location = New Point(285, 95)
+        txtValidID.Name = "txtValidID"
+        txtValidID.Size = New Size(220, 26)
+        txtValidID.TabIndex = 5
         ' 
-        ' TextBox7
+        ' txtValidIDName
         ' 
-        TextBox7.Location = New Point(283, 102)
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(195, 23)
-        TextBox7.TabIndex = 5
+        txtValidIDName.Font = New Font("Segoe UI", 10.5F)
+        txtValidIDName.Location = New Point(285, 155)
+        txtValidIDName.Name = "txtValidIDName"
+        txtValidIDName.Size = New Size(220, 26)
+        txtValidIDName.TabIndex = 6
         ' 
-        ' Button1
+        ' chkIsActive
         ' 
-        Button1.Location = New Point(283, 218)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(195, 53)
-        Button1.TabIndex = 7
-        Button1.Text = "Add Member"
-        Button1.UseVisualStyleBackColor = True
+        chkIsActive.AutoSize = True
+        chkIsActive.Checked = True
+        chkIsActive.CheckState = CheckState.Checked
+        chkIsActive.Font = New Font("Segoe UI Semibold", 9.5F, FontStyle.Bold)
+        chkIsActive.ForeColor = Color.DarkSlateGray
+        chkIsActive.Location = New Point(285, 195)
+        chkIsActive.Name = "chkIsActive"
+        chkIsActive.Size = New Size(117, 21)
+        chkIsActive.TabIndex = 7
+        chkIsActive.Text = "Account Active"
+        chkIsActive.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' btnAdd
         ' 
-        Button2.Location = New Point(283, 294)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(195, 53)
-        Button2.TabIndex = 16
-        Button2.Text = "Clear"
-        Button2.UseVisualStyleBackColor = True
+        btnAdd.BackColor = Color.SteelBlue
+        btnAdd.FlatAppearance.BorderSize = 0
+        btnAdd.FlatStyle = FlatStyle.Flat
+        btnAdd.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnAdd.ForeColor = Color.White
+        btnAdd.Location = New Point(285, 255)
+        btnAdd.Name = "btnAdd"
+        btnAdd.Size = New Size(220, 45)
+        btnAdd.TabIndex = 8
+        btnAdd.Text = "SAVE MEMBER"
+        btnAdd.UseVisualStyleBackColor = False
+        ' 
+        ' btnClear
+        ' 
+        btnClear.BackColor = Color.White
+        btnClear.FlatAppearance.BorderColor = Color.DarkGray
+        btnClear.FlatAppearance.BorderSize = 1
+        btnClear.FlatStyle = FlatStyle.Flat
+        btnClear.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnClear.ForeColor = Color.DarkSlateGray
+        btnClear.Location = New Point(285, 321)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(220, 40)
+        btnClear.TabIndex = 9
+        btnClear.Text = "Clear Fields"
+        btnClear.UseVisualStyleBackColor = False
         ' 
         ' Patrons
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(502, 376)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
-        Controls.Add(TextBox6)
-        Controls.Add(TextBox7)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        BackColor = Color.White
+        ClientSize = New Size(540, 400)
+        Controls.Add(btnClear)
+        Controls.Add(btnAdd)
+        Controls.Add(chkIsActive)
+        Controls.Add(txtValidIDName)
+        Controls.Add(txtValidID)
+        Controls.Add(txtPhone)
+        Controls.Add(txtEmail)
+        Controls.Add(txtLastName)
+        Controls.Add(txtMiddleName)
+        Controls.Add(txtFirstName)
         Controls.Add(Label8)
         Controls.Add(Label7)
         Controls.Add(Label6)
@@ -204,7 +249,7 @@ Partial Class Patrons
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "Patrons"
-        Text = "Patrons"
+        Text = "Add Membership"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -217,13 +262,14 @@ Partial Class Patrons
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents txtMiddleName As TextBox
+    Friend WithEvents txtLastName As TextBox
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents txtPhone As TextBox
+    Friend WithEvents txtValidID As TextBox
+    Friend WithEvents txtValidIDName As TextBox
+    Friend WithEvents chkIsActive As CheckBox
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnClear As Button
 End Class

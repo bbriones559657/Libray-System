@@ -2,9 +2,8 @@
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(disposing As Boolean)
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
                 components.Dispose()
@@ -14,12 +13,8 @@ Partial Class Form1
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.
-    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Label1 = New Label()
@@ -33,71 +28,85 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 9.75F)
-        Label1.Location = New Point(21, 89)
+        Label1.Font = New Font("Segoe UI Semibold", 10.0F, FontStyle.Bold)
+        Label1.ForeColor = Color.DarkSlateGray
+        Label1.Location = New Point(40, 100)
         Label1.Name = "Label1"
-        Label1.Size = New Size(40, 16)
+        Label1.Size = New Size(43, 19)
         Label1.TabIndex = 5
         Label1.Text = "Email"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 9.75F)
-        Label2.Location = New Point(21, 128)
+        Label2.Font = New Font("Segoe UI Semibold", 10.0F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkSlateGray
+        Label2.Location = New Point(40, 150)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 16)
+        Label2.Size = New Size(68, 19)
         Label2.TabIndex = 4
         Label2.Text = "Password"
         ' 
         ' txtEmail
         ' 
-        txtEmail.Location = New Point(104, 89)
+        txtEmail.Font = New Font("Segoe UI", 11.0F)
+        txtEmail.Location = New Point(120, 96)
         txtEmail.Name = "txtEmail"
-        txtEmail.Size = New Size(269, 23)
+        txtEmail.Size = New Size(250, 27)
         txtEmail.TabIndex = 1
         ' 
         ' txtPassword
         ' 
-        txtPassword.Location = New Point(104, 122)
+        txtPassword.Font = New Font("Segoe UI", 11.0F)
+        txtPassword.Location = New Point(120, 146)
         txtPassword.Name = "txtPassword"
-        txtPassword.Size = New Size(269, 23)
+        txtPassword.Size = New Size(250, 27)
         txtPassword.TabIndex = 2
+        txtPassword.UseSystemPasswordChar = True
         ' 
         ' btnLogin
         ' 
-        btnLogin.Location = New Point(21, 166)
+        btnLogin.BackColor = Color.SteelBlue
+        btnLogin.FlatAppearance.BorderSize = 0
+        btnLogin.FlatStyle = FlatStyle.Flat
+        btnLogin.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
+        btnLogin.ForeColor = Color.White
+        btnLogin.Location = New Point(40, 205)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(352, 50)
+        btnLogin.Size = New Size(330, 45)
         btnLogin.TabIndex = 3
-        btnLogin.Text = "Login"
-        btnLogin.UseVisualStyleBackColor = True
+        btnLogin.Text = "LOGIN"
+        btnLogin.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = SystemColors.MenuHighlight
-        Label3.Location = New Point(21, 30)
+        Label3.Font = New Font("Segoe UI", 16.0F, FontStyle.Bold)
+        Label3.ForeColor = Color.SteelBlue
+        Label3.Location = New Point(35, 35)
         Label3.Name = "Label3"
-        Label3.Size = New Size(352, 22)
+        Label3.Size = New Size(311, 30)
         Label3.TabIndex = 0
-        Label3.Text = "Welcome To Library Booking System"
+        Label3.Text = "Library Management System"
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AcceptButton = btnLogin
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(395, 239)
+        BackColor = Color.White
+        ClientSize = New Size(420, 290)
         Controls.Add(Label3)
         Controls.Add(btnLogin)
         Controls.Add(txtPassword)
         Controls.Add(txtEmail)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        MaximizeBox = False
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form1"
+        Text = "Library Login"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -108,5 +117,4 @@ Partial Class Form1
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label3 As Label
-
 End Class

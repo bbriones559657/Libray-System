@@ -1,0 +1,62 @@
+﻿V4 FEATURE SUMMARY
+==================
+
+1. Splash screen
+- Uses the VB application framework splash-screen hook.
+- Displays for at least 1.5 seconds, then opens Login.
+
+2. User roles
+- Admin: all normal library operations + Staff Management.
+- Staff: Members, Books, Borrow, Return, Active Loans, Reports.
+- Existing first active account becomes Admin automatically if the database has no Admin.
+- test@gmail.com / test123 is Admin in the included SQL dump.
+
+3. Logout
+- Dashboard has Logout.
+- Clears the in-memory user session, closes secondary forms, and returns to Login.
+
+4. Due dates
+- borrowed.due_date added.
+- Maximum loan period: 3 calendar days.
+- If day 3 falls on Saturday or Sunday, the deadline moves back to Friday.
+- Examples: Monday->Thursday, Tuesday->Friday, Wednesday->Friday, Thursday->Friday, Friday->Monday.
+- Borrow receipt, return lookup, return receipt, transaction receipt, dashboard and reports show due date.
+- Overdue status is calculated when today is later than due_date and return_date is NULL.
+
+5. Active Loans / Borrowers
+- Separate operational screen for unreturned books.
+- Search by member, title or copy ID.
+- Filters: all active, due today, overdue.
+- RETURN SELECTED opens Return Book with the physical copy barcode loaded.
+
+6. Transaction History filters
+- Date: All Time, Today, Last 7 Days, Last 30 Days.
+- Status: All, Active, Returned, Due Today, Overdue.
+
+7. Reports
+- Circulation Transactions
+- Overdue Loans
+- Inventory Summary
+- Member Activity
+- Popular Books
+- Date presets: Today, Last 7 Days, Last 30 Days, All Time, Custom.
+- Export CSV (Excel-compatible).
+- Print / PDF uses the normal Windows print dialog; select Microsoft Print to PDF for a PDF file.
+
+TEST CHECKLIST
+==============
+A. Login as Admin. Confirm Staff Management is visible.
+B. Create a Staff account. Log out. Login as Staff. Confirm Staff Management is hidden.
+C. Borrow an available physical copy. Confirm receipt shows Due Date.
+D. Check Active Loans and Dashboard. Confirm the same transaction appears.
+E. Return from Active Loans -> RETURN SELECTED. Confirm borrower details appear before CONFIRM RETURN.
+F. Confirm returned copy becomes Available and history shows Returned.
+G. Change Windows/MySQL test dates or seed records to test Due Today / Overdue filters.
+H. Generate each report. Export CSV. Open it in Excel or another spreadsheet app.
+I. Use PRINT / PDF and select Microsoft Print to PDF.
+
+DUE-DATE NOTE
+=============
+The loan period is a maximum of 3 calendar days. If the calculated third day is
+Saturday or Sunday, the due date is moved back to Friday. This means Wednesday
+and Thursday loans are both due Friday.

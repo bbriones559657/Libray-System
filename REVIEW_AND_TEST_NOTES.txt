@@ -1,0 +1,87 @@
+FINAL PROJECT - REVIEW / TEST NOTES
+=================================
+
+Major fixes
+-----------
+1. Replaced shared database-connection usage in the forms with per-operation connections.
+   This removes the "There is already an open DataReader associated with this Connection" failure.
+2. Book Details now finishes/ closes its DataReader before displaying a message.
+3. Book Delete is now a soft delete: books.b_isActive = 0.
+4. A book cannot be deactivated while any of its physical copies are still borrowed.
+5. Soft-deleted books are hidden from active inventory and cannot be borrowed.
+6. Borrowing locks/checks the exact physical copy before changing it to Borrowed.
+7. Returning is now a two-step workflow:
+      first click  = find borrower/book details
+      second click = confirm return
+8. Return re-checks the borrowing transaction during confirmation to stop double returns/stale confirmations.
+9. Borrow and Return now generate receipts with a Print Receipt button.
+10. Dashboard transaction history can re-open/reprint a receipt by double-clicking a transaction row.
+11. Copy IDs are shown as barcode-friendly text such as COPY-005001.
+12. Add Book now shows every newly created physical Copy ID / barcode.
+13. If Add Book receives an ISBN already used by the same active title/author/category,
+    it adds new PHYSICAL COPIES to the existing Book ID instead of creating another logical book.
+14. Editing a book blocks changing its ISBN to an ISBN already owned by another active book.
+15. A member with an unreturned book cannot be changed to inactive.
+16. Database startup checks automatically add books.b_isActive if the old schema is still being used.
+
+Important data model
+--------------------
+books.b_id     = logical title/book record (example: The Hobbit)
+bookcopies.bc_id = ONE physical copy of that title
+
+Example:
+Book ID 2003 = The Hobbit
+Copy ID 5005 = first physical The Hobbit
+Copy ID 5006 = second physical The Hobbit
+
+Both copies may be borrowed at the same time because they have different bc_id values.
+Returning COPY-005005 returns only bc_id 5005. COPY-005006 remains borrowed until that exact copy is returned.
+
+Manual workflow tests
+---------------------
+A. Login
+   - Active account succeeds.
+   - Wrong password fails.
+   - Inactive account fails.
+
+B. Add Book with 2 copies
+   - One books row is created.
+   - Two bookcopies rows are created.
+   - Both copies have unique bc_id values and Available status.
+   - Success message displays both barcode values.
+
+C. Same ISBN again
+   - If metadata matches, requested copies are added to the existing Book ID.
+   - If metadata conflicts, save is rejected.
+
+D. Borrow two copies of the same title
+   - Member A borrows first copy ID -> success.
+   - Member B borrows second copy ID -> success.
+   - Inventory Available Copies decreases separately for each copy.
+   - Attempting to borrow either borrowed copy again -> blocked.
+
+E. Return
+   - Enter/scan the physical copy ID/barcode.
+   - First click displays member + book + borrow date.
+   - Button changes to CONFIRM RETURN.
+   - Second click returns that exact copy and creates a printable receipt.
+   - Repeating return for same copy -> blocked.
+
+F. Soft delete
+   - Book with an active borrowed copy -> deactivation blocked.
+   - After all copies are returned -> Delete Books sets b_isActive = 0.
+   - books row and borrowing history stay in the database.
+   - Inactive book disappears from active Book Inventory.
+
+G. Receipt
+   - Borrow success -> receipt appears and can print.
+   - Return success -> receipt appears and can print.
+   - Dashboard -> double-click a transaction -> receipt can be reopened/reprinted.
+
+Database verification
+---------------------
+Run MIGRATION_soft_delete_books.sql once if you want to update the database manually.
+The application also attempts this schema update at startup.
+
+Run DATA_INTEGRITY_CHECKS.sql after testing.
+All five checks should return zero rows in a consistent database.
